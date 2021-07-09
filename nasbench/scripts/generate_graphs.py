@@ -72,7 +72,8 @@ from absl import logging
 
 from nasbench.lib import graph_util
 import numpy as np
-import tensorflow as tf   # For gfile
+import tensorflow.compat.v1 as tf   # For gfile
+tf.disable_v2_behavior()
 
 flags.DEFINE_string('output_file', '/tmp/generated_graphs.json',
                     'Output file name.')
